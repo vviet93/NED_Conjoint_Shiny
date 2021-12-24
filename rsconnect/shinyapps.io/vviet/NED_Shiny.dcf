@@ -1,0 +1,12 @@
+name: NED_Shiny
+title: NED_Shiny
+username:
+account: vviet
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5341944
+bundleId: 5406902
+url: https://vviet.shinyapps.io/NED_Shiny/
+when: 1640352944.97757
+asMultiple: FALSE
+asStatic: FALSE
