@@ -5,8 +5,8 @@ account: vviet
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5341944
-bundleId: 5406902
+bundleId: 5406920
 url: https://vviet.shinyapps.io/NED_Shiny/
-when: 1640352944.97757
+when: 1640353708.63541
 asMultiple: FALSE
 asStatic: FALSE
