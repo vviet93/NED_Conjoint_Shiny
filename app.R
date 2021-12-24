@@ -35,27 +35,27 @@ ui <- fluidPage(theme="style.css",
                                 fluidRow(class="titletable",width=12,h3("Foreign Information Profile")),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Provider"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("provider",label="",choices = c("Stranger","Neighbor","Friend","Family")))
+                                         column(width=8,class="selectiontable",selectInput("provider",label="",choices = main.data[feature=="Provider",level]))
                                 ),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Aquisition Place"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("aquisition",label="",choices=c("One's own home","Another person's home","Outside (park, street, etc.)","Market")))
+                                         column(width=8,class="selectiontable",selectInput("aquisition",label="",choices=main.data[feature=="Aquisition Place",level]))
                                 ),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Distribution Media"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("distribution",label="",choices=c("North Korean phone/tablet","CD/DVD","USB","Foreign device (phone etc.)")))),
+                                         column(width=8,class="selectiontable",selectInput("distribution",label="",choices=main.data[feature=="Distribution Media",level]))),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Content Subject"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("contsubj",label="",choices=c("Not country-related","International content","South Korean content","North Korean content")))),
+                                         column(width=8,class="selectiontable",selectInput("contsubj",label="",choices=main.data[feature=="Content Subject",level]))),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Content Form"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("contform",label="",choices=c("Text","Recorded file (audiobook etc.)","Video","Computer program or app")))),
+                                         column(width=8,class="selectiontable",selectInput("contform",label="",choices=main.data[feature=="Content Form",level]))),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Target Age"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("age",label="",choices=c("Youth","19-29","30-49","50+")))),
+                                         column(width=8,class="selectiontable",selectInput("age",label="",choices=main.data[feature=="Target Age",level]))),
                                 fluidRow(class="alignedrow",column(class="columntitle",width=3,"Type"),
                                          column(width=1,class="connectionline",""),
-                                         column(width=8,class="selectiontable",selectInput("type",label="",choices=c("Non-fiction","Fiction"))))
+                                         column(width=8,class="selectiontable",selectInput("type",label="",main.data[feature=="Type",level])))
                          ),
                          column(class="maintext",width=7,
                                 htmlOutput("marginal"),
@@ -89,27 +89,27 @@ ui <- fluidPage(theme="style.css",
                         fluidRow(class="titletable",width=12,h3("해외정보의 프로필")),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"제공자"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("provider.kr",label="",choices = c("친분이 없는 사람","이웃","친구","가족/친척")))
+                                 column(width=8,class="selectiontable",selectInput("provider.kr",label="",main.data[feature=="Provider",KOR]))
                         ),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"입수 장소"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("aquisition.kr",label="",choices=c("본인의 집","다른 사람의 집","야외 (공원, 길가 등)","장마당")))
+                                 column(width=8,class="selectiontable",selectInput("aquisition.kr",label="",main.data[feature=="Aquisition Place",KOR]))
                         ),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"내용물 유통 매체"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("distribution.kr",label="",choices=c("북한 손전화기/태블릿","CD/DVD (시디/디브이디)","USB (유에스비)","외국 휴대용 전자기기 (손전화기 등)")))),
+                                 column(width=8,class="selectiontable",selectInput("distribution.kr",label="",main.data[feature=="Distribution Media",KOR]))),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"내용물 주제/배경"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("contsubj.kr",label="",choices=c("특정 나라와 관련없음","남북한 외의 다른 나라관련","남한관련","북한관련")))),
+                                 column(width=8,class="selectiontable",selectInput("contsubj.kr",label="",main.data[feature=="Content Subject",KOR]))),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"내용물 형태"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("contform.kr",label="",choices=c("글","녹음파일 (오디오북 등)","영상물","컴퓨터프로그램 혹은 앱")))),
+                                 column(width=8,class="selectiontable",selectInput("contform.kr",label="",main.data[feature=="Content Form",KOR]))),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"내용물의 대상 연령대"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("age.kr",label="",choices=c("청소년기","청년기 (19-29세)","중년기 (30-49세)","장년기/노년기 (50세 이상)")))),
+                                 column(width=8,class="selectiontable",selectInput("age.kr",label="",choices=main.data[feature=="Target Age",KOR]))),
                         fluidRow(class="alignedrow",column(class="columntitle",width=3,"내용물의 분류"),
                                  column(width=1,class="connectionline",""),
-                                 column(width=8,class="selectiontable",selectInput("type.kr",label="",choices=c("허구","실화"))))
+                                 column(width=8,class="selectiontable",selectInput("type.kr",label="",choices=main.data[feature=="Type",KOR])))
                  ),
                  column(class="maintext",width=7,
                         htmlOutput("marginal.kr"),
@@ -133,21 +133,21 @@ ui <- fluidPage(theme="style.css",
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
     observe({
-        updateSelectInput(session,"provider",selected=sample(c("Stranger","Neighbor","Friend","Family"),1))
-        updateSelectInput(session,"aquisition",selected=sample(c("One's own home","Another person's home","Outside (park, street, etc.)","Market"),1))
-        updateSelectInput(session,"distribution",selected=sample(c("North Korean phone/tablet","CD/DVD","USB","Foreign device (phone etc.)"),1))
-        updateSelectInput(session,"contsubj",selected=sample(c("Not country-related","International content","South Korean content","North Korean content"),1))
-        updateSelectInput(session,"contform",selected=sample(c("Text","Recorded file (audiobook etc.)","Video","Computer program or app"),1))
-        updateSelectInput(session,"age",selected=sample(c("Youth","19-29","30-49","50+"),1))
-        updateSelectInput(session,"type",selected=sample(c("Non-fiction","Fiction"),1))
+        updateSelectInput(session,"provider",selected=sample(main.data[feature=="Provider",level],1))
+        updateSelectInput(session,"aquisition",selected=sample(main.data[feature=="Aquisition Place",level],1))
+        updateSelectInput(session,"distribution",selected=sample(main.data[feature=="Distribution Media",level],1))
+        updateSelectInput(session,"contsubj",selected=sample(main.data[feature=="Content Subject",level],1))
+        updateSelectInput(session,"contform",selected=sample(main.data[feature=="Content Form",level],1))
+        updateSelectInput(session,"age",selected=sample(main.data[feature=="Target Age",level],1))
+        updateSelectInput(session,"type",selected=sample(main.data[feature=="Type",level],1))
         
-        updateSelectInput(session,"provider.kr",selected=sample(c("친분이 없는 사람","이웃","친구","가족/친척"),1))
-        updateSelectInput(session,"aquisition.kr",selected=sample(c("본인의 집","다른 사람의 집","야외 (공원, 길가 등)","장마당"),1))
-        updateSelectInput(session,"distribution.kr",selected=sample(c("북한 손전화기/태블릿","CD/DVD (시디/디브이디)","USB (유에스비)","외국 휴대용 전자기기 (손전화기 등)"),1))
-        updateSelectInput(session,"contsubj.kr",selected=sample(c("특정 나라와 관련없음","남북한 외의 다른 나라관련","남한관련","북한관련"),1))
-        updateSelectInput(session,"contform.kr",selected=sample(c("글","녹음파일 (오디오북 등)","영상물","컴퓨터프로그램 혹은 앱"),1))
-        updateSelectInput(session,"age.kr",selected=sample(c("청소년기","청년기 (19-29세)","중년기 (30-49세)","장년기/노년기 (50세 이상)"),1))
-        updateSelectInput(session,"type.kr",selected=sample(c("허구","실화"),1))
+        updateSelectInput(session,"provider.kr",selected=sample(main.data[feature=="Provider",KOR],1))
+        updateSelectInput(session,"aquisition.kr",selected=sample(main.data[feature=="Aquisition Place",KOR],1))
+        updateSelectInput(session,"distribution.kr",selected=sample(main.data[feature=="Distribution Media",KOR],1))
+        updateSelectInput(session,"contsubj.kr",selected=sample(main.data[feature=="Content Subject",KOR],1))
+        updateSelectInput(session,"contform.kr",selected=sample(main.data[feature=="Content Form",KOR],1))
+        updateSelectInput(session,"age.kr",selected=sample(main.data[feature=="Target Age",KOR],1))
+        updateSelectInput(session,"type.kr",selected=sample(main.data[feature=="Type",KOR],1))
     })
     output$marginal <- renderUI({
         value <- main.data[feature=="Provider" & level==input$provider,estimate] + 
