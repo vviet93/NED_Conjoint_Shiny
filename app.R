@@ -18,7 +18,7 @@ ui <- fluidPage(theme="style.css",
 
     # Application title
     titlePanel("",windowTitle="Determinants of Foreign Information Use in North Korea"),
-    h2(style="padding-left:15px;padding-right:15px","Determinants of Foreign Information Use in North Korea/북한의 해외정보이용 결정요인"),
+    h2(style="padding-left:15px;padding-right:15px","Determinants of Foreign Information Use in North Korea\n북한의 해외정보이용 결정요인"),
     div(class="divideline"," "),
     navbarPage("",
         tabPanel("English",
@@ -68,7 +68,7 @@ ui <- fluidPage(theme="style.css",
                                 htmlOutput("type.effect"),)
                 ),
                 div(style="padding-left:6%;padding-right:6%;margin-top:25px",
-                    p(span(style="font-weight:bold","Source:"),'The outcome statistic is derived from a choice-based conjoint using data from a 2021 survey of 313 North Korean defector-migrants living in South Korea. Funded by the National Endowment for Democracy (NED), the survey was administered as part of the project, “Information Dissemination in North Korea: The Role of Social Networks, Markets, and Social Change," by Peter Ward and Steven Denney. For questions or concerns about this application, please contact Steven Denney at',
+                    p(span(style="font-weight:bold","Source:"),'The outcome statistic is derived from a choice-based conjoint using data from a 2021 survey of 313 North Korean defector-migrants living in South Korea. Funded by the National Endowment for Democracy (NED), the survey was administered as part of the project, “Information Dissemination in North Korea: The Role of Social Capital, Civil Society, and Markets," by Peter Ward and Steven Denney. For questions or concerns about this application, please contact Steven Denney at',
                       a(href="mailto:steven.denney@univie.ac.at","steven.denney@univie.ac.at",.noWS="after"),
                       ".")
                     )
@@ -122,7 +122,7 @@ ui <- fluidPage(theme="style.css",
                         htmlOutput("type.effect.kr"),)
         ),
         div(style="padding-left:6%;padding-right:6%;margin-top:25px",
-            p(span(style="font-weight:bold","출처:"),'이  산출된 통계는 한국에 살고 있는 313명의 탈북자-이민자를 대상으로 한 2021년 조사 데이터를 이용한 선택 기반 결합 분석 (이산 선택 모델링)에서 도출되었다. 이 조사는 전국 민주주의 기금의 지원을 받아 "북한에서 해외내용물 유통 구조: 사회연결망, 시장, 사회 변화 참가자들을 위한 정보, " Peter Ward와 Steven Denney의 보고서입니다. 이 응용 프로그램에 대한 질문이나 우려 사항은 Steven Denney(',
+            p(span(style="font-weight:bold","출처:"),'이  산출된 통계는 한국에 살고 있는 313명의 탈북자-이민자를 대상으로 한 2021년 조사 데이터를 이용한 선택 기반 결합 분석 (이산 선택 모델링)에서 도출되었다. 이 조사는 전국 민주주의 기금의 지원을 받아 "북한에서 해외내용물 유통 구조: 사회연결망, 시장, 사회 변화 참가자들을 위한 정보," Peter Ward와 Steven Denney의 보고서입니다. 이 응용 프로그램에 대한 질문이나 우려 사항은 Steven Denney(',
               a(href="mailto:steven.denney@univie.ac.at","steven.denney@univie.ac.at",.noWS="outside"),
               ")에게 문의하십시오.")
         ))
@@ -417,4 +417,5 @@ server <- function(input, output, session) {
 }
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+#shinyApp(ui = ui, server = server)
+deployApp()
