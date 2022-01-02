@@ -156,7 +156,7 @@ server <- function(input, output, session) {
             main.data[feature=="Content Subject" & level==input$contsubj,estimate]+
             main.data[feature=="Content Form" & level==input$contform,estimate]+
             main.data[feature=="Target Age"& level==input$age,estimate]+
-            main.data[feature=="Type"& level==input$type,estimate]
+            main.data[feature=="Type"&level==input$type,estimate]
         value=signif(value*100+48.40593,4)
         div(p("Based on the parameters selected, this foreign information profile has a ",span(style="font-weight:bold; color:#A4243B",paste0(value,"%")),"probability of being used."))
     })
@@ -181,14 +181,14 @@ server <- function(input, output, session) {
     output$aquisition.effect <- renderUI({
         if(input$aquisition=="One's own home"){
             p(class="effectsize","The acquisition place being",
-              span(style="font-weight:bold;color:#00072D",input$aquisition),
+              span(style="font-weight:bold;color:#00072D",input$aquisition.effect),
               "changed this probability by",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Aquisition Place" & level=="Market",estimate],2),"%")),
               "compared to Market")
         }
         else{
             p(class="effectsize","The acquisition place being",
-              span(style="font-weight:bold;color:#00072D",input$aquisition),
+              span(style="font-weight:bold;color:#00072D",input$aquisition.effect),
               "changed this probability by",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Aquisition Place" & level==input$aquisition,estimate],2),"%")),
               "compared to One's Own Home")
@@ -292,40 +292,40 @@ server <- function(input, output, session) {
             main.data[feature=="Target Age"& KOR==input$age.kr,estimate]+
             main.data[feature=="Type"&KOR==input$type.kr,estimate]
         value=signif(value*100+48.40593,4)
-        div(p("선택한 매개 변수를 기준으로 이 외부 정보 프로파일은",span(style="font-weight:bold; color:#A4243B",paste0(value,"%")),"의 소비 확률이 가집니다."))
+        div(p("선택한 매개 변수를 기준으로 이 외부 정보 프로파일은",span(style="font-weight:bold; color:#A4243B",paste0(value,"%")),"의 소비 확률을 가집니다."))
     })
     
     output$provider.effect.kr <- renderUI({
         if(input$provider.kr=="친분이 없는 사람"){
             p(class="effectsize","이 제공자는",
               span(style="font-weight:bold;color:#00072D",input$provider.kr),
-              "로서 가족/친척 에 비하면 확률이",
+              "로서 가족/친척 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Provider" & level=="Family",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","이 제공자는",
               span(style="font-weight:bold;color:#00072D",input$provider.kr),
-              "로서 친분이 없는 사람에 비하면 확률이",
+              "로서 친분이 없는 사람에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Provider" & KOR==input$provider.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
     output$aquisition.effect.kr <- renderUI({
         if(input$aquisition.kr=="본인의 집"){
             p(class="effectsize","이 장소는",
-              span(style="font-weight:bold;color:#00072D",input$aquisition.kr),
-              "로서장 마당 에 비하면 확률이",
+              span(style="font-weight:bold;color:#00072D",input$aquisition.effect.kr),
+              "로서장 마당 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Aquisition Place" & level=="Market",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","이 장소는 ",
-              span(style="font-weight:bold;color:#00072D",input$aquisition.kr),
-              "로서 본인의 집 에 비하면 확률이",
+              span(style="font-weight:bold;color:#00072D",input$aquisition.effect.kr),
+              "로서 본인의 집 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Aquisition Place" & KOR==input$aquisition.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
@@ -333,16 +333,16 @@ server <- function(input, output, session) {
         if(input$distribution.kr=="북한 손전화기/태블릿"){
             p(class="effectsize","이 유통 매체는",
               span(style="font-weight:bold;color:#00072D",input$distribution.kr),
-              "로서 외국 휴대용 전자기기 (손전화기 등) 에 비하면 확률이",
+              "로서 외국 휴대용 전자기기 (손전화기 등) 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Distribution Media" & level=="Foreign device (phone etc.)",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","이 유통 매체는",
               span(style="font-weight:bold;color:#00072D",input$distribution.kr),
-              "로서 북한 손전화기/태블릿 에 비하면 확률이",
+              "로서 북한 손전화기/태블릿 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Distribution Media" & KOR==input$distribution.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
@@ -350,16 +350,16 @@ server <- function(input, output, session) {
         if(input$contsubj.kr=="특정 나라와 관련없음"){
             p(class="effectsize","이 내용 주제는",
               span(style="font-weight:bold;color:#00072D",input$contsubj.kr),
-              "로서 북한관련 에 비하면 확률이",
+              "로서 북한관련 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Content Subject" & level=="North Korean content",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","이 내용 주제는",
               span(style="font-weight:bold;color:#00072D",input$contsubj.kr),
-              "로서 특정 나라와 관련없음 에 비하면 확률이",
+              "로서 특정 나라와 관련없음 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Content Subject" & KOR==input$contsubj.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
@@ -367,16 +367,16 @@ server <- function(input, output, session) {
         if(input$contform.kr=="글"){
             p(class="effectsize","이 내용 유형은",
               span(style="font-weight:bold;color:#00072D",input$contform.kr),
-              "로서 컴퓨터프로그램 혹은 앱 에 비하면 확률이",
+              "로서 컴퓨터프로그램 혹은 앱 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Content Form" & level=="Computer program or app",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","이 내용 유형은",
               span(style="font-weight:bold;color:#00072D",input$contform.kr),
-              "로서 글 에 비하면 확률이",
+              "로서 글 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Content Form" & KOR==input$contform.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
@@ -384,16 +384,16 @@ server <- function(input, output, session) {
         if(input$age.kr=="청소년기"){
             p(class="effectsize","대상 연령대는",
               span(style="font-weight:bold;color:#00072D",input$age.kr),
-              "로서 장년기/노년기 (50세 이상) 에 비하면 확률이",
+              "로서 장년기/노년기 (50세 이상) 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Target Age" & level=="50+",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","대상 연령대는",
               span(style="font-weight:bold;color:#00072D",input$age.kr),
-              "로서 청소년기 에 비하면 확률이",
+              "로서 청소년기 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Target Age" & KOR==input$age.kr,estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
     
@@ -401,16 +401,16 @@ server <- function(input, output, session) {
         if(input$type.kr=="허구"){
             p(class="effectsize","내용 종류는",
               span(style="font-weight:bold;color:#00072D",input$type.kr),
-              "로서 실화 에 비하면 확률이",
+              "로서 실화 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(-signif(100*main.data[feature=="Type" & level=="Fiction",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
         else{
             p(class="effectsize","내용 종류는",
               span(style="font-weight:bold;color:#00072D",input$type.kr),
-              "로서 허구 에 비하면 확률이",
+              "로서 허구 에 비하면 확률을",
               span(style="font-weight:bold;color:#00072D",paste0(signif(100*main.data[feature=="Type" & level=="Fiction",estimate],2),"%")),
-              "변경된다.")
+              "로 낮춘다/높인다.")
         }
     })
 
