@@ -417,10 +417,10 @@ server <- function(input, output, session) {
 }
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+##shinyApp(ui = ui, server = server)
 
 # update
-library(rsconnect)
+#library(rsconnect)
 #rsconnect::deployApp()
-deployApp()
+#deployApp()
 
