@@ -26,7 +26,7 @@ ui <- fluidPage(theme="style.css",
                  div(style="padding-left:6%;padding-right:6%;margin-top:30px",
                      p("This application is intended for use by NGOs and other organizations to support their information dissemination strategies in North Korea. It can also be used by researchers interested in the determinants of foreign information use in the country. Users can specify foreign information profiles based on seven fixed profile attributes with varying levels. The outcome statistic represents the",
                      span(style="font-weight:bold","probability"), 
-                     "that the specified profile will be used In other words, the probability that this information will be read, listened to, or watched.")
+                     "that the specified profile will be used. In other words, the probability that this information will be read, listened to, or watched.")
                       ),
         
                 # Sidebar with a slider input for number of bins 
@@ -68,7 +68,7 @@ ui <- fluidPage(theme="style.css",
                                 htmlOutput("type.effect"),)
                 ),
                 div(style="padding-left:6%;padding-right:6%;margin-top:25px",
-                    p(span(style="font-weight:bold","Source:"),'The outcome statistic is derived from a choice-based conjoint using data from a 2021 survey of 313 North Korean defector-migrants living in South Korea. Funded by the National Endowment for Democracy (NED), the survey was administered as part of the project, “Information Dissemination in North Korea: The Role of Social Capital, Civil Society, and Markets," by Peter Ward and Steven Denney. For questions or concerns about this application, please contact Steven Denney at',
+                    p(span(style="font-weight:bold","Source:"),'The outcome statistic is derived from a choice-based conjoint using data from a 2021 survey of 313 North Korean defector-migrants living in South Korea. Funded by the National Endowment for Democracy (NED), the survey was administered as part of the project, “Foreign Information Flows Under Autocracy: The Role of Social Capital, Civil Society, and Markets," by Peter Ward and Dr. Steven Denney. For questions or concerns about this application, please contact Dr. Denney at',
                       a(href="mailto:steven.denney@univie.ac.at","steven.denney@univie.ac.at",.noWS="after"),
                       ".")
                     )
@@ -418,3 +418,8 @@ server <- function(input, output, session) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
+# update
+library(rsconnect)
+deployApp()
+

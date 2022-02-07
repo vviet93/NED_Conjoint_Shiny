@@ -5,7 +5,7 @@ account: scdenney
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5385378
-bundleId: 5427267
+bundleId: 5551921
 url: https://scdenney.shinyapps.io/ned_conjoint_shiny/
-when: 1641149285.02493
-lastSyncTime: 1641149285.02495
+when: 1644235882.12566
+lastSyncTime: 1644235882.12568
