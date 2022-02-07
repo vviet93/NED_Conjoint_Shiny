@@ -421,5 +421,5 @@ shinyApp(ui = ui, server = server)
 
 # update
 library(rsconnect)
-deployApp()
+rsconnect::deployApp(account = 'scdenney', server = 'shinyapps.io')
 
